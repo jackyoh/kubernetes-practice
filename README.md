@@ -26,3 +26,21 @@ $ tar zxvf kubernetes-server-linux-amd64.tar.gz
 $ cd /opt/kubernetes/server/kubernetes/server/bin
 $ ./kube-apiserver --logtostderr=true --v=0 --etcd_servers=http://host1:4001 --insecure-bind-address=0.0.0.0 --insecure-port=8080 --service-cluster-ip-range=192.168.1.0/24
 ```
+
+* Start Kubernetes Master 的 Controller Manager
+```
+$ cd /opt/kubernetes/server/kubernetes/server/bin
+$ ./kube-controller-manager --logtostderr=true --v=0 --master=http://host1:8080
+```
+
+* Start Kubernetes Master 的 Scheduler
+```
+$ cd /opt/kubernetes/server/kubernetes/server/bin
+$ ./kube-scheduler --logtostderr=true --v=0 --master=http://host1:8080
+```
+
+* Start Kubernetes Master 的 Proxy
+```
+$ cd /opt/kubernetes/server/kubernetes/server/bin
+$ ./kube-proxy --logtostderr=true --v=0
+```
