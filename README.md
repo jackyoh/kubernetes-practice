@@ -44,3 +44,15 @@ $ ./kube-scheduler --logtostderr=true --v=0 --master=http://host1:8080
 $ cd /opt/kubernetes/server/kubernetes/server/bin
 $ ./kube-proxy --logtostderr=true --v=0
 ```
+
+* 啟動Kubernetes Node 指令
+```
+$ cd /opt/kubernetes/server/kubernetes/server/bin
+$ ./kubelet --logtostderr=true --v=0 --address=0.0.0.0 --api-servers=http://host1:8080
+```
+
+* 檢查啟動狀態指令如下
+```
+$ kubectl -s http://host1:8080 get compnentstatus
+$ kubectl -s http://host1:8080 get node
+```
